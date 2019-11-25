@@ -11,15 +11,14 @@ setwd("C:/FCD/BigDataRAzure/Cap02")
 getwd()
 
 # Exercício 1 - Crie um vetor com 30 números 
-getwd
-setwd()
+vetor1 <- c(1:30)
 # Exercício 2 - Crie uma matriz com 4 linhas e 4 colunas preenchida com números inteiro
 
 VETOR <- c(1:16)
 NOVA <- VETOR %>%  matrix(nrow = 4,ncol =4)
 NOVA
 # Exercício 3 - Crie uma lista unindo o vetor e matriz criados anteriormente
-list(VETOR,NOVA)
+lista <- list(VETOR,NOVA)
 
 # Exercício 4 - Usando a função read.table() leia o arquivo do link abaixo para uma dataframe
 # http://data.princeton.edu/wws509/datasets/effort.dat
@@ -45,6 +44,8 @@ dim(iris)
 str(iris)
 
 # Exercício 7 - Crie um plot simples usando as duas primeiras colunas do dataframe iris
+
+plot(iris$Sepal.Length,iris$Sepal.Width)
 
 library(tidyverse)
 
@@ -72,7 +73,7 @@ library(dplyr)
 # Dica 2: Consulte o help para aprender como usar a função slice()
 ?slice
 # Exercícios 10 - Use a função filter no seu novo dataframe criado no item anterior e retorne apenas valores em que Sepal.Length > 6
-
+RSiteSearch('filter')
 
 iris %>% filter(Sepal.Length > 6)
 # possui 61 linhas com Sepal.Lenght maior que 6
