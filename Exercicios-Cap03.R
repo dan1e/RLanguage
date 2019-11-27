@@ -11,14 +11,14 @@
 # Exercício 1 - Pesquise pela função que permite listar todos 
 #os arquivo no diretório de trabalho
 
-setwd('~/Exerc?cios Data Science/R/')
+setwd('C:/Users/joselacerda/Documents/Exercícios Data Science/R/')
+getwd()
 list.files()
-
 
 # Exercício 2 - Crie um dataframe a partir de 3 vetores: um de caracteres, 
 #um lógico e um de números
 
-nome <- c('Let?cia','Luciene','Davi','Arist?teles')
+nome <- c('Letícia','Luciene','Davi','Aristóteles')
 numeros <- c(16:19)
 logico <- c(TRUE,FALSE,TRUE,TRUE)
 
@@ -65,7 +65,6 @@ for(i in lst2) {print(i)}
 
 
 
-
 # Exercício 5 - Considere as duas matrizes abaixo. 
 # Faça uma multiplicação element-wise e multiplicação normal entre as materizes
 
@@ -83,14 +82,28 @@ mat1 %*% mat2
 
 # Exercício 6 - Crie um vetor, matriz, lista e dataframe e faça a nomeação 
 #de cada um dos objetos
-vetor <- c(1:20)
-matriz <- matrix(1:40,nrow = 4,ncol = 5)
-u <- Sys.Date()
-t <- c(1:5)
-datas <- u-t
 
-dataframe <- data.frame(numero = 1:5, dataontens = as.character(datas))
-View(dataframe)
+
+vectorin <- c(1:5)
+names(vectorin) <- c('col1','col2','col3','col4','col5')
+vectorin
+
+Matrizen <- matrix(c(1:25),nrow = 5,ncol = 5, byrow = TRUE)
+dimnames(Matrizen) <- (list(c('row1','row2','row3','row4','row5'),c('col1','col2','col3','col4','col5')))
+Matrizen
+
+
+listen <-  list(vectorin,Matrizen)
+names(listen) <- c('vector','matriz')
+listen
+
+
+listen[[2]][2,1]
+df7 <-  data.frame(nome = c('Aristóteles','Hipócrates','Sócrates','Platão','Xenofonte'), numero = vectorin)
+colnames(df7) <- c("col1",'col2')
+df7
+rownames(df7) <- c('row1','row2','row3','row4','row5')
+
 
 # Exercício 7 - Considere a matriz abaixo. Atribua valores NA de forma aletória 
 #para 50 elementos da matriz
